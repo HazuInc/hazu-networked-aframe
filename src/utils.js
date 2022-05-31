@@ -59,9 +59,10 @@ function getNetworkedEntity(entity) {
       curEntity = curEntity.parentNode;
     }
 
-    if (!curEntity || !curEntity.components || !curEntity.components.networked) {
-      return reject("Entity does not have and is not a child of an entity with the [networked] component ");
-    }
+    // Hazu: Remove this to make compatible with Angular
+    // if (!curEntity || !curEntity.components || !curEntity.components.networked) {
+    //   return reject("Entity does not have and is not a child of an entity with the [networked] component ");
+    // }
 
     if (curEntity.hasLoaded) {
       resolve(curEntity);

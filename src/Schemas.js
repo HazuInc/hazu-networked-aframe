@@ -28,7 +28,7 @@ class Schemas {
       if (!this.validateTemplate(schema, templateEl)) {
         return;
       }
-      this.templateCache[schema.template] = document.importNode(templateEl.content, true);
+      this.templateCache[schema.template] = document.importNode(templateEl, true); // Hazu: To make this work with Angular, remove the .content
     } else {
       NAF.log.error('Schema not valid: ', schema);
       NAF.log.error('See https://github.com/networked-aframe/networked-aframe#syncing-custom-components');
